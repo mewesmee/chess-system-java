@@ -39,12 +39,12 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()];
 	}
 
-	public void placePiece(ChessPiece piece, Position position) {
+	public void placePiece(Piece p, Position position) {
 		if (thereIsAPiece(position)) {
 			throw new BoardException("There is already a piece on position " + position);
 		}
-		pieces[position.getRow()][position.getColumn()] = piece;
-		piece.position = position;
+		pieces[position.getRow()][position.getColumn()] = p;
+		p.position = position;
 	}
 	
 	public Piece removePiece(Position position) {
